@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  docx2pdf:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: interop-docx2pdf:win
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
+    isolation: process
+    # Note: Requires Docker Desktop set to Windows containers and a base with Word installed
+
+
